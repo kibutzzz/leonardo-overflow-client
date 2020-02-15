@@ -1,3 +1,17 @@
+# Leonardo overflow web client
+
+This project is part of the attempt to reproduce [StackOverflow](https://stackoverflow.com)'s functionalities for learning purposes.
+
+## Technologies used
+
+- ReactJs
+- Axios
+- Styled-components
+
+## Aditional Information
+
+[Leonardo Overflow Backend Repository](https://github.com/kibutzzz/leonardo-overflow)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
