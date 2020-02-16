@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Input from "../general/styles/Input";
 import Button from "../general/styles/Button";
 
-const SearchBox = styled.div`
+const SearchBox = styled.form`
   justify-content: center;
 `;
 
@@ -13,7 +13,6 @@ const Container = styled.nav`
   padding: 10px 20px;
   top: 0;
   backdrop-filter: blur(20px);
-
 
   justify-content: space-between;
   align-items: center;
@@ -43,14 +42,24 @@ const AppName = styled.h1`
 `;
 
 const Navbar = () => {
+  const [searchText, setSearchText] = useState("");
+  const handleSearchSubmit = e => {
+    e.preventDefault();
+    setSearchText("");
+  };
+
+  const handleSearchChange = e => {
+    setSearchText(e.target.value);
+  };
+
   return (
     <Container>
       <AppName>
         Leonardo <span>Overflow</span>
       </AppName>
 
-      <SearchBox>
-        <NavInput />
+      <SearchBox onSubmit={handleSearchSubmit}>
+        <NavInput value={searchText} onChange={handleSearchChange} />
         <Button>Search</Button>
       </SearchBox>
 
