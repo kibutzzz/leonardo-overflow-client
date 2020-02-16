@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import QuestionItem from "../QuestionItem";
-import QuestionListContainer from "./QuestionListContainer";
+import QuestionListContainer from "./styles/QuestionListContainer";
 
 const QuestionList = () => {
   const [questions] = useState([

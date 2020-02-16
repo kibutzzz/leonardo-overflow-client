@@ -1,8 +1,8 @@
 import React from "react";
 import Tag from "../Tag";
-import QuestionContainer from "./QuestionContainer";
-import CounterBox from "./CounterBox";
-import Summary from "./Summary";
+import QuestionContainer from "./styles/QuestionContainer";
+import CounterBox from "./styles/CounterBox";
+import Summary from "./styles/Summary";
 
 const QuestionItem = props => {
   return (
