@@ -1,12 +1,12 @@
 import React from "react";
-import Home from "./pages/Home";
+import Ask from "./pages/Ask";
 import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Home />
+      <Ask />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import QuestionItem from "../QuestionItem";
 import QuestionListContainer from "./styles/QuestionListContainer";
+import Button from "../general/styles/Button";
 
 const QuestionList = () => {
   const [questions] = useState([
@@ -58,6 +59,7 @@ const QuestionList = () => {
   return (
     <QuestionListContainer>
       <h1>Questions</h1>
+      <Button>Ask a question</Button>
       {questions.map(question => (
         <QuestionItem key={question.id} {...question} />
       ))}
