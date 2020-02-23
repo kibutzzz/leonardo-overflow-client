@@ -14,6 +14,7 @@ const Container = styled.nav`
   top: 0;
   backdrop-filter: blur(20px);
 
+  z-index: 100;
   justify-content: space-between;
   align-items: center;
 

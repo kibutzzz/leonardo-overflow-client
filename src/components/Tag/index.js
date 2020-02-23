@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const TagContainer = styled.span`
+  display: inline-block;
   padding: 0px 6px;
   font-size: 0.9em;
   margin-right: 4px;
