@@ -4,11 +4,9 @@ import Container from "../components/general/styles/Container";
 
 const Home = () => {
   return (
-    <>
-      <Container>
-        <QuestionList />
-      </Container>
-    </>
+    <Container>
+      <QuestionList />
+    </Container>
   );
 };
 

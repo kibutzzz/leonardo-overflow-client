@@ -8,7 +8,7 @@ const QuestionItem = props => {
   return (
     <QuestionContainer>
       <CounterBox>
-        <strong>{props?.question?.voteCount}</strong>
+        <strong>{props?.voteCount}</strong>
         <span>Votes</span>
       </CounterBox>
       <CounterBox>
@@ -16,13 +16,13 @@ const QuestionItem = props => {
         <span>Answers</span>
       </CounterBox>
       <Summary>
-        <span>{props?.question?.title}</span>
+        <span>{props?.title}</span>
         <div>
-          {props?.question?.tags?.map(tag => (
-            <Tag key={tag?.id} tag={tag} />
+          {props?.tags?.map(tag => (
+            <Tag key={tag?.id} {...tag} />
           ))}
         </div>
-        <div>{props?.question?.user?.username}</div>
+        <div>{props?.user?.username}</div>
       </Summary>
     </QuestionContainer>
   );

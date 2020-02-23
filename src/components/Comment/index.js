@@ -14,9 +14,9 @@ const CommentContainer = styled.div`
 const Comment = props => {
   return (
     <CommentContainer>
-      <span>{props.comment.voteCount}</span>
-      <span>{props.comment.text}</span>
-      <span>{props.comment.user.username}</span>
+      <span>{props?.voteCount}</span>
+      <span>{props?.text}</span>
+      <span>{props?.user.username}</span>
     </CommentContainer>
   );
 };

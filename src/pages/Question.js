@@ -90,11 +90,11 @@ const Question = () => {
       <hr />
       <p>{question.description}</p>
       {question.tags.map(tag => (
-        <Tag key={tag.id} tag={tag} />
+        <Tag key={tag.id} {...tag} />
       ))}
 
       {question.comments.map(comment => (
-        <Comment key={comment.id} comment={comment} />
+        <Comment key={comment.id} {...comment} />
       ))}
       <hr />
       <strong>
@@ -102,7 +102,7 @@ const Question = () => {
       </strong>
 
       {question.answers.map(answer => (
-        <Answer key={answer.id} answer={answer} />
+        <Answer key={answer.id} {...answer} />
       ))}
     </Container>
   );

@@ -59,7 +59,7 @@ const QuestionList = () => {
     <QuestionListContainer>
       <h1>Questions</h1>
       {questions.map(question => (
-        <QuestionItem key={question.id} question={question} />
+        <QuestionItem key={question.id} {...question} />
       ))}
     </QuestionListContainer>
   );

@@ -13,12 +13,12 @@ const AnswerContainer = styled.div`
 const Answer = props => {
   return (
     <AnswerContainer>
-      <strong>{props.answer.voteCount}</strong>
+      <strong>{props?.voteCount}</strong>
       <div>
-      <p>{props.answer.description}</p>
-      {props.answer.comments.map(comment => (
-        <Comment key={comment.id} comment={comment} />
-      ))}
+        <p>{props?.description}</p>
+        {props?.comments.map(comment => (
+          <Comment key={comment.id} {...comment} />
+        ))}
       </div>
     </AnswerContainer>
   );

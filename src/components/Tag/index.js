@@ -7,12 +7,11 @@ const TagContainer = styled.span`
   margin-right: 4px;
   border-radius: 5px;
   border: 1px solid #0095ff;
-  background-color: #AACCFF;
-  
+  background-color: #aaccff;
 `;
 
 const Tag = props => {
-  return <TagContainer>{props.tag.name}</TagContainer>;
+  return <TagContainer>{props.name}</TagContainer>;
 };
 
 export default Tag;
