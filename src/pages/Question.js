@@ -4,6 +4,12 @@ import QuestionTitle from "../components/general/styles/QuestionTitle";
 import Tag from "../components/Tag";
 import Comment from "../components/Comment";
 import Answer from "../components/Answer";
+import VoteBox from "../components/VoteBox";
+import styled from "styled-components";
+
+const QuestionContainer = styled.div`
+  display: flex;
+`;
 
 const Question = () => {
   const [question] = useState({
@@ -88,10 +94,15 @@ const Question = () => {
       </span>
       <span>{question?.user?.name}</span>
       <hr />
-      <p>{question.description}</p>
-      {question.tags.map(tag => (
-        <Tag key={tag.id} {...tag} />
-      ))}
+      <QuestionContainer>
+        <VoteBox voteCount={question.voteCount}/>
+        <div>
+          <p>{question.description}</p>
+          {question.tags.map(tag => (
+            <Tag key={tag.id} {...tag} />
+          ))}
+        </div>
+      </QuestionContainer>
 
       {question.comments.map(comment => (
         <Comment key={comment.id} {...comment} />

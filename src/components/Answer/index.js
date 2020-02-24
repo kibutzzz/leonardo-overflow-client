@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Comment from "../Comment";
+import VoteBox from "../VoteBox";
 
 const AnswerContainer = styled.div`
   display: flex;
 
-  strong {
+  > strong {
     padding: 0 20px;
   }
 `;
@@ -13,7 +14,8 @@ const AnswerContainer = styled.div`
 const Answer = props => {
   return (
     <AnswerContainer>
-      <strong>{props?.voteCount}</strong>
+      <VoteBox voteCount={props.voteCount}/>
+
       <div>
         <p>{props?.description}</p>
         {props?.comments.map(comment => (

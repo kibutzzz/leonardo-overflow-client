@@ -69,7 +69,7 @@ const TagGrid = () => {
   return (
     <Grid>
       {tags.map(tag => (
-        <TagBox {...tag} />
+        <TagBox key={tag.id} {...tag} />
       ))}
     </Grid>
   );
