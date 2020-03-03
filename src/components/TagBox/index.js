@@ -13,6 +13,11 @@ const Box = styled.div`
   border: solid 1px grey;
   background-color: white;
 
+
+  @media(max-width: 800px) {
+    width: 100%;
+  }
+  
   span {
     margin-left: 1rem;
     margin-top: 6px;
