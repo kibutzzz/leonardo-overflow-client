@@ -16,7 +16,7 @@ const Comment = props => {
     <CommentContainer>
       <span>{props?.voteCount}</span>
       <span>{props?.text}</span>
-      <span>{props?.user.username}</span>
+      <span>{props?.user?.username}</span>
     </CommentContainer>
   );
 };
