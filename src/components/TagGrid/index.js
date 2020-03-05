@@ -11,7 +11,7 @@ const Grid = styled.div`
 
 const TagGrid = () => {
 
-  const tags = useSelector(state => state.data);
+  const tags = useSelector(state => state.tags.data);
   return (
     <Grid>
       {tags.map(tag => (

@@ -1,5 +1,5 @@
 import React from "react";
-import Tags from "./pages/Tags";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 
 import { Provider } from 'react-redux';
@@ -10,7 +10,7 @@ function App() {
   return (
     <Provider store={store}>
       <Navbar />
-      <Tags />
+      <Home />
     </Provider>
   );
 }
