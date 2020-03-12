@@ -6,6 +6,9 @@ import Ask from "./pages/Ask";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar";
+import NotFound from "./components/NotFound";
+
+import { GlobalStyle } from "./styles/GlobalStyle";
 
 import { Provider } from 'react-redux';
 import {
@@ -40,8 +43,12 @@ function App() {
           <Route path="/signup">
             <Signup />
           </Route>
+          <Router path="*">
+            <NotFound />
+          </Router>
         </Switch>
       </Router>
+      <GlobalStyle />
     </Provider>
   );
 }
