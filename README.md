@@ -7,6 +7,9 @@ This project is part of the attempt to reproduce [StackOverflow](https://stackov
 - ReactJs
 - Axios
 - Styled-components
+- Redux
+- Redux-saga
+- React-router-dom
 
 ## Aditional Information
 
