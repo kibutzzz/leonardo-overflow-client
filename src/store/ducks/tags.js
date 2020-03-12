@@ -3,7 +3,12 @@ export const Types = {
 }
 
 const INITIAL_STATE = {
-  data: []
+  data: [
+    {
+      name: "Lorem ipsum",
+      description: "Lorem ipsum dolor sit amet"
+    }
+  ]
 }
 
 export default function tags(state = INITIAL_STATE, action) {

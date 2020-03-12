@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../general/styles/Button";
 import { Container, AppName, SearchBox, NavInput, NavigationLinks } from './styles';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [searchText, setSearchText] = useState("");
@@ -17,14 +18,21 @@ const Navbar = () => {
     <Container>
       <div>
         <AppName>
-          Leonardo <span>Overflow</span>
+          <Link to="/">
+            Leonardo <span>Overflow</span>
+          </Link>
         </AppName>
         <NavigationLinks>
           <li>
-            Tags
+            
+            <Link to="/tags">
+              Tags
+            </Link>
           </li>
           <li>
-            Users
+            <Link to="/ask">
+              Ask
+            </Link>
           </li>
         </NavigationLinks>
       </div>
