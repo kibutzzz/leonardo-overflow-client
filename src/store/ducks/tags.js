@@ -5,6 +5,7 @@ export const Types = {
 const INITIAL_STATE = {
   data: [
     {
+      id: 1,
       name: "Lorem ipsum",
       description: "Lorem ipsum dolor sit amet"
     }

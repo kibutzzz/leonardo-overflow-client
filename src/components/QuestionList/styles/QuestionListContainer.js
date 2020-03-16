@@ -11,7 +11,7 @@ const QuestionListContainer = styled.div`
   background-color: #fff;
   box-shadow: 0 8px 10px gray;
 
-  > h1 {
+  > strong {
     padding: 20px 15px;
   }
 `;

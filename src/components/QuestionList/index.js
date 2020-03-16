@@ -5,22 +5,12 @@ import Button from "../general/styles/Button";
 
 import { useHistory } from "react-router-dom";
 
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from "react";
-
-const QuestionList = () => {
+const QuestionList = ({ questions = [], title = "Questions" }) => {
   const history = useHistory();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch({ type: "API_LOAD_QUESTIONS" })
-  }, [dispatch])
-
-  const questions = useSelector(state => state.questions.data);
 
   return (
     <QuestionListContainer>
-      <h1>Questions</h1>
+      <strong>{title}</strong>
       <Button onClick={() => history.push("/ask")}>Ask a question</Button>
       {questions.map(question => (
         <QuestionItem key={question.id} {...question} />

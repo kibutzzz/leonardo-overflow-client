@@ -1,10 +1,13 @@
 import React from "react";
-import Question from "./pages/Question";
-import Home from "./pages/Home";
-import Tags from "./pages/Tags";
+
 import Ask from "./pages/Ask";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Question from "./pages/Question";
+import Search from "./pages/Search";
 import Signup from "./pages/Signup";
+import Tags from "./pages/Tags";
+
 import Navbar from "./components/Navbar";
 import NotFound from "./components/NotFound";
 
@@ -42,6 +45,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup />
+          </Route> 
+          <Route path="/search">
+            <Search />
           </Route>
           <Router path="*">
             <NotFound />

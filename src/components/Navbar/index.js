@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import Button from "../general/styles/Button";
 import { Container, AppName, SearchBox, NavInput, NavigationLinks } from './styles';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const Navbar = () => {
   const [searchText, setSearchText] = useState("");
+  const history = useHistory();
   const handleSearchSubmit = e => {
     e.preventDefault();
+
+    history.push({ pathname: "/search", search: `?q=${searchText}` });
     setSearchText("");
   };
 
@@ -24,7 +27,7 @@ const Navbar = () => {
         </AppName>
         <NavigationLinks>
           <li>
-            
+
             <Link to="/tags">
               Tags
             </Link>
@@ -37,7 +40,7 @@ const Navbar = () => {
         </NavigationLinks>
       </div>
       <SearchBox onSubmit={handleSearchSubmit}>
-        <NavInput value={searchText} onChange={handleSearchChange} />
+        <NavInput value={searchText} onChange={handleSearchChange} minLength="2" required />
         <Button>Search</Button>
       </SearchBox>
     </Container>
