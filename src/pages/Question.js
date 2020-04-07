@@ -8,6 +8,8 @@ import Answer from "../components/Answer";
 import VoteBox from "../components/VoteBox";
 import styled from "styled-components";
 
+import { useParams } from 'react-router-dom';
+
 import { Creators as questionApiActions } from '../store/sagas/questions';
 
 const QuestionContainer = styled.div`
@@ -17,11 +19,12 @@ const QuestionContainer = styled.div`
 const Question = () => {
 
   const dispatch = useDispatch();
-  const id = 1;
+  const { id } = useParams();
 
   useEffect(() => {
+    console.log("dispatch", id)
     dispatch(questionApiActions.apiLoadQuestion(id))
-  }, [dispatch])
+  }, [id, dispatch]);
 
   const question = useSelector(state => state.specificQuestion.data);
 

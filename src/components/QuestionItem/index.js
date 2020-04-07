@@ -4,6 +4,8 @@ import QuestionContainer from "./styles/QuestionContainer";
 import CounterBox from "./styles/CounterBox";
 import Summary from "./styles/Summary";
 
+import { Link } from 'react-router-dom';
+
 const QuestionItem = props => {
   return (
     <QuestionContainer>
@@ -16,7 +18,7 @@ const QuestionItem = props => {
         <span>Answers</span>
       </CounterBox>
       <Summary>
-        <span>{props?.title}</span>
+        <Link to={`/question/${props.id}`}>{props?.title}</Link>
         <div>
           {props?.tags?.map(tag => (
             <Tag key={tag?.id} {...tag} />
