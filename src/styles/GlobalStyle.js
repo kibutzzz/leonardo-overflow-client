@@ -11,6 +11,9 @@ export const GlobalStyle = createGlobalStyle`
   html, body, #root {
       height: 100%;
   }
+  #root {
+    overflow-y: scroll;
+  }
 
   body {
       background-color: rgb(245, 245, 248);
