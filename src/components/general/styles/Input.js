@@ -6,6 +6,10 @@ const Input = styled.input`
     margin-top: 4px;
 
     border: 1px solid gray;    
+
+    :invalid {
+        border-bottom: 2px red solid;
+    }
 `
 
 
