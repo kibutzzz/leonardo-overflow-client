@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "../general/styles/Button";
 import { Container, AppName, SearchBox, NavInput, NavigationLinks } from './styles';
 import { Link, useHistory } from 'react-router-dom';
+import { isAuthenticated, logout } from "../../services/auth";
 
 const Navbar = () => {
   const [searchText, setSearchText] = useState("");
@@ -16,6 +17,11 @@ const Navbar = () => {
   const handleSearchChange = e => {
     setSearchText(e.target.value);
   };
+
+  const handleLogout = () => {
+    logout();
+    history.push("/")
+  }
 
   return (
     <Container>
@@ -39,10 +45,13 @@ const Navbar = () => {
           </li>
         </NavigationLinks>
       </div>
-      <SearchBox onSubmit={handleSearchSubmit}>
-        <NavInput value={searchText} onChange={handleSearchChange} minLength="2" required />
-        <Button>Search</Button>
-      </SearchBox>
+      <div>
+        <SearchBox onSubmit={handleSearchSubmit}>
+          <NavInput value={searchText} onChange={handleSearchChange} minLength="2" required />
+          <Button>Search</Button>
+        </SearchBox>
+        {isAuthenticated() ? <Button onClick={handleLogout}>Logout</Button> : <Link to="/login">Login</Link>}
+      </div>
     </Container>
   );
 };
