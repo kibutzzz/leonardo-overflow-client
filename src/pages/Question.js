@@ -7,6 +7,7 @@ import Comment from "../components/Comment";
 import Answer from "../components/Answer";
 import VoteBox from "../components/VoteBox";
 import AddComment from "../components/AddComment";
+import AddAnswer from "../components/AddAnswer";
 import styled from "styled-components";
 
 import { useParams } from 'react-router-dom';
@@ -63,6 +64,8 @@ const Question = () => {
       {question?.answers?.map(answer => (
         <Answer key={answer.id} {...answer} />
       ))}
+
+      <AddAnswer questionId={question.id} />
     </Container>
   );
 };
