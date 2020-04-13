@@ -14,7 +14,7 @@ const QuestionItem = props => {
         <span>Votes</span>
       </CounterBox>
       <CounterBox>
-        <strong>n</strong>
+        <strong>{props?.answerCount}</strong>
         <span>Answers</span>
       </CounterBox>
       <Summary>
