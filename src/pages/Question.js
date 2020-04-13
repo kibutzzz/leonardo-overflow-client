@@ -6,6 +6,7 @@ import Tag from "../components/Tag";
 import Comment from "../components/Comment";
 import Answer from "../components/Answer";
 import VoteBox from "../components/VoteBox";
+import AddComment from "../components/AddComment";
 import styled from "styled-components";
 
 import { useParams } from 'react-router-dom';
@@ -52,6 +53,8 @@ const Question = () => {
       {question?.comments?.map(comment => (
         <Comment key={comment.id} {...comment} />
       ))}
+
+      <AddComment type={"QUESTION"} id={question.id} />
       <hr />
       <strong>
         {question?.answers?.reduce(accumulator => accumulator + 1, 0)} Answer(s)
