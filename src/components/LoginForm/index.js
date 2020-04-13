@@ -59,8 +59,8 @@ const LoginForm = () => {
         />
       </InputBlock>
       {
-        errors.map(error => (
-          <div>{error.error}</div>
+        errors.map((error, i) => (
+          <div key={i}>{error.error}</div>
         ))
       }
       <p>Don't have and account? <Link to="/signup"> Click here</Link></p>
