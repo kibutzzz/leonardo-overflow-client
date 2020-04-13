@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Comment from "../Comment";
 import VoteBox from "../VoteBox";
+import AddComment from "../AddComment";
 
 const AnswerContainer = styled.div`
   display: flex;
@@ -19,16 +20,16 @@ const AnswerContainer = styled.div`
 `;
 
 const Answer = props => {
-  console.log(props)
   return (
     <AnswerContainer>
-      <VoteBox voteCount={props.voteCount}/>
+      <VoteBox voteCount={props.voteCount} />
 
       <div className="question">
         <p>{props?.description} <span>{props.user.username}</span></p>
         {props?.comments.map(comment => (
           <Comment key={comment.id} {...comment} />
         ))}
+        <AddComment type="ANSWER" id={props.id} />
       </div>
     </AnswerContainer>
   );
