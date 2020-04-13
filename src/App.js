@@ -17,8 +17,10 @@ import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom';
+import { isAuthenticated } from './services/auth';
 
 import store from './store';
 
@@ -28,35 +30,30 @@ function App() {
       <Router >
         <Navbar />
         <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/question/:id">
-            <Question />
-          </Route>
-          <Route path="/tags">
-            <Tags />
-          </Route>
-          <Route path="/ask">
-            <Ask />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <Signup />
-          </Route> 
-          <Route path="/search">
-            <Search />
-          </Route>
-          <Router path="*">
-            <NotFound />
-          </Router>
+          <Route path="/" exact component={() => <Home />} />
+          <Route path="/question/:id" component={() => <Question />} />
+          <Route path="/tags" component={() => <Tags />} />
+          <Route path="/login" component={() => <Login />} />
+          <Route path="/signup" component={() => <Signup />} />
+          <Route path="/search" component={() => <Search />} />
+          <PrivateRoute path="/ask" component={() => <Ask />} />
+          <Route path="*" component={() => <NotFound />} />
         </Switch>
       </Router>
       <GlobalStyle />
     </Provider>
   );
 }
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      isAuthenticated()
+        ? (<Component {...props} />)
+        : (<Redirect to={{ pathname: "/login" }} />)
+    }
+  />
+);
 
 export default App;
